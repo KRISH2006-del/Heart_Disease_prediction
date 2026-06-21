@@ -15,13 +15,12 @@ model = load_model()
 # Set page config
 st.set_page_config(
     page_title="Heart Disease Prediction",
-    page_icon="❤️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Title and description
-st.title("❤️ Heart Disease Prediction System")
+st.title("Heart Disease Prediction System")
 st.markdown("""
 This application uses a machine learning model to predict the likelihood of heart disease
 based on medical parameters. The model was trained on 303 patient records with 85% training accuracy.
@@ -29,7 +28,7 @@ based on medical parameters. The model was trained on 303 patient records with 8
 
 # Sidebar for information
 with st.sidebar:
-    st.header("📊 Model Information")
+    st.header(" Model Information")
     st.info("""
     **Model Type:** Logistic Regression  
     **Training Accuracy:** 85.12%  
@@ -73,7 +72,7 @@ with col4:
     thal = st.slider("Thal (0-3)", 0, 3, 2)
 
 # Make prediction
-if st.button("🔍 Predict", key="predict_btn", use_container_width=True):
+if st.button(" Predict", key="predict_btn", use_container_width=True):
     # Prepare input data
     input_data = np.array([[age, sex_val, cp, trestbps, chol, fbs_val, restecg, 
                             thalach, exang_val, oldpeak, slope, ca, thal]])
@@ -86,11 +85,11 @@ if st.button("🔍 Predict", key="predict_btn", use_container_width=True):
     st.divider()
     
     if prediction == 1:
-        st.error(f"⚠️ **Prediction: Heart Disease Detected**", icon="❌")
+        st.error(f" **Prediction: Heart Disease Detected**")
         risk_level = "High Risk"
         color = "red"
     else:
-        st.success(f"✅ **Prediction: No Heart Disease**", icon="✓")
+        st.success(f" **Prediction: No Heart Disease**")
         risk_level = "Low Risk"
         color = "green"
     
@@ -115,4 +114,4 @@ if st.button("🔍 Predict", key="predict_btn", use_container_width=True):
 
 # Footer
 st.divider()
-st.caption("⚠️ **Disclaimer:** This tool is for educational purposes only and should not be used as a substitute for professional medical advice.")
+st.caption(" **Disclaimer:** This tool is for educational purposes only and should not be used as a substitute for professional medical advice.")
